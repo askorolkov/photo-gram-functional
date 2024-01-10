@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>photo-gram</title>
+  </head>
+  <body class="page">
+    <div class="page__container">
+      <header class="header">
+        <p class="header__title">Photo-gram</p>
+      </header>
+      <main class="content">
+        <section class="profile">          
+          <img src="https://assets.faceit-cdn.net/avatars/ae83a65f-1ac4-4aa3-905d-f6d2deacf560_1550513758150.png" alt="#" class="profile__pic">       
+          <div class="profile__info">
+            <p class="profile__name">Aleksey Korolkov</p>
+            <p class="profile__job">Procrastinator</p>
+          </div>          
+          <button class="profile__edit"></button>
+          <button class="profile__add-picture">+</button>
+        </section>
+        <section class="photo"></section>
+      </main>
+      <footer class="footer">
+        &copy;2023 Aleksey Korolkov
+      </footer>
+      <div class="popup" id="addPicture">
+        <div class="popup__wrapper">
+          <h2 class="popup__title">Добавить картинку</h2>
+          <form class="popup__form">
+            <input type="text" id="pictureName" class="popup__input" placeholder="Название" maxlength="25" required>
+            <input type="url" id="pictureUrl" class="popup__input" placeholder="Ссылка" required>
+            <button class="form__submit" type="submit">Создать</button>
+          </form>
+          <button class="popup__close"></button>
+        </div>
+      </div>
+      <div class="popup" id="editProfile">
+        <div class="popup__wrapper">
+          <h2 class="popup__title">Изменить профиль</h2>
+          <form class="popup__form">
+            <input type="text" id="profileName" class="popup__input" placeholder="Название" minlength="2" maxlength="40" required>
+            <input type="text" id="profileJob" class="popup__input" placeholder="Ваша профессия">
+            <input type="text" id="profileAvatar" class="popup__input" placeholder="Ссылка на аватар" required>
+            <button class="form__submit" type="submit">Изменить</button>
+          </form>
+          <button class="popup__close"></button>
+        </div>
+      </div>
+      <template id="card-template">
+        <div class="card">
+          <img class="card__img" src="#" alt="#">
+          <button class="card__delete-button"> </button>
+          <div class="card__info">
+            <p class="card__name">name</p>
+            <div class="card__like">
+              <button class="card__like-button"></button>
+              <p class="card__like-counter">0</p>
+            </div>
+          </div>   
+        </div>
+      </template> 
+    </div>    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
